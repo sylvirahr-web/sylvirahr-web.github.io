@@ -580,9 +580,13 @@
 
     .contact-item {
       flex: 1;
-      min-width: 200px;
+      min-width: 250px;
       animation: fadeInUp 0.6s ease-out forwards;
       transition: all 0.3s;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
     }
 
     .contact-item:nth-child(1) { animation-delay: 0.3s; }
@@ -591,6 +595,7 @@
 
     .contact-item:hover {
       transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.15);
     }
 
     .contact-item h3 {
@@ -600,8 +605,20 @@
 
     .contact-item p {
       margin: 0;
-      font-size: 1em;
+      font-size: 0.95em;
       animation: none;
+      word-break: break-word;
+    }
+
+    .contact-item a {
+      color: var(--accent-gold);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+      color: white;
     }
 
     /* Footer */
@@ -667,7 +684,11 @@
 
       .contact-info {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1rem;
+      }
+
+      .contact-item {
+        min-width: auto;
       }
 
       .services h2, .offerings h2 {
@@ -990,15 +1011,15 @@
     <div class="contact-info">
       <div class="contact-item">
         <h3>📍 Location</h3>
-        <p>New Bangalore, India</p>
+        <p>722, 24th Main Rd, KR Layout,<br>JP Nagar Phase 6, J. P. Nagar,<br>Bengaluru, Karnataka 560078</p>
       </div>
       <div class="contact-item">
         <h3>📧 Email</h3>
-        <p>contact@sylvira.com</p>
+        <p><a href="mailto:sylvira.hr@gmail.com">sylvira.hr@gmail.com</a></p>
       </div>
       <div class="contact-item">
         <h3>📞 Phone</h3>
-        <p>+91 (Your Phone Number)</p>
+        <p><a href="tel:+919740741843">+91 97407 41843</a></p>
       </div>
     </div>
   </section>
