@@ -89,8 +89,19 @@
     .hero {
       background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
       color: white;
-      padding: 100px 5%;
+      padding: 60px 5%;
       text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 600px;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      flex: 1;
+      min-width: 300px;
     }
 
     .hero h1 {
@@ -103,6 +114,20 @@
       font-size: 1.3em;
       margin-bottom: 2rem;
       opacity: 0.95;
+    }
+
+    .hero-image {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image svg {
+      max-width: 100%;
+      height: auto;
+      filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
     }
 
     .hero-buttons {
@@ -120,6 +145,8 @@
       text-decoration: none;
       font-weight: 600;
       transition: transform 0.3s;
+      border: none;
+      cursor: pointer;
     }
 
     .btn-primary:hover {
@@ -148,6 +175,16 @@
       align-items: center;
     }
 
+    .about-image {
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-image svg {
+      max-width: 100%;
+      height: auto;
+    }
+
     .about-text p {
       margin-bottom: 1.5rem;
       font-size: 1.1em;
@@ -158,6 +195,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
+      margin-top: 2rem;
     }
 
     .stat {
@@ -202,11 +240,12 @@
 
     .service-card {
       background: white;
-      padding: 2.5rem;
+      padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
       transition: transform 0.3s, box-shadow 0.3s;
       border-top: 5px solid var(--primary-blue);
+      text-align: center;
     }
 
     .service-card:hover {
@@ -215,8 +254,18 @@
     }
 
     .service-icon {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 3em;
-      margin-bottom: 1rem;
+    }
+
+    .service-icon svg {
+      width: 100%;
+      height: 100%;
     }
 
     .service-card h3 {
@@ -329,6 +378,11 @@
         font-size: 0.9em;
       }
 
+      .hero {
+        flex-direction: column;
+        min-height: auto;
+      }
+
       .hero h1 {
         font-size: 2em;
       }
@@ -371,11 +425,49 @@
 
   <!-- Hero Section -->
   <section class="hero" id="home">
-    <h1>Bridge Skilled Professionals with Top Employers</h1>
-    <p>Expert Staffing, IT Solutions & Project Management for Your Business Growth</p>
-    <div class="hero-buttons">
-      <a href="#services" class="btn-primary">Explore Services</a>
-      <a href="#contact" class="btn-primary">Contact Us</a>
+    <div class="hero-content">
+      <h1>Bridge Skilled Professionals with Top Employers</h1>
+      <p>Expert Staffing, IT Solutions & Project Management for Your Business Growth</p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn-primary">Explore Services</a>
+        <a href="#contact" class="btn-primary">Contact Us</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" width="350" height="350">
+        <!-- Background circle -->
+        <circle cx="200" cy="200" r="190" fill="#ffffff" opacity="0.1"/>
+        
+        <!-- Left person -->
+        <circle cx="100" cy="80" r="25" fill="#ffffff"/>
+        <rect x="85" y="110" width="30" height="50" fill="#ffffff" rx="5"/>
+        <rect x="80" y="160" width="15" height="40" fill="#ffffff" rx="5"/>
+        <rect x="105" y="160" width="15" height="40" fill="#ffffff" rx="5"/>
+        
+        <!-- Right person -->
+        <circle cx="300" cy="80" r="25" fill="#ffffff"/>
+        <rect x="285" y="110" width="30" height="50" fill="#ffffff" rx="5"/>
+        <rect x="280" y="160" width="15" height="40" fill="#ffffff" rx="5"/>
+        <rect x="305" y="160" width="15" height="40" fill="#ffffff" rx="5"/>
+        
+        <!-- Center person (elevated) -->
+        <circle cx="200" cy="100" r="28" fill="#FFD700"/>
+        <rect x="182" y="135" width="36" height="60" fill="#FFD700" rx="5"/>
+        <rect x="175" y="200" width="18" height="45" fill="#FFD700" rx="5"/>
+        <rect x="207" y="200" width="18" height="45" fill="#FFD700" rx="5"/>
+        
+        <!-- Connection lines -->
+        <line x1="125" y1="110" x2="180" y2="135" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+        <line x1="275" y1="110" x2="220" y2="135" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+        
+        <!-- Growth arrow -->
+        <path d="M 200 300 L 200 320 M 200 320 L 190 310 M 200 320 L 210 310" stroke="#FFD700" stroke-width="3" fill="none" stroke-linecap="round"/>
+        
+        <!-- Decorative elements -->
+        <circle cx="80" cy="250" r="8" fill="#ffffff" opacity="0.7"/>
+        <circle cx="320" cy="280" r="6" fill="#ffffff" opacity="0.6"/>
+        <circle cx="100" cy="320" r="5" fill="#ffffff" opacity="0.5"/>
+      </svg>
     </div>
   </section>
 
@@ -383,27 +475,69 @@
   <section class="about" id="about">
     <h2>About SYLVIRA</h2>
     <div class="about-content">
+      <div>
+        <div class="about-image">
+          <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="280" height="280">
+            <!-- Building -->
+            <rect x="50" y="100" width="200" height="150" fill="#003DA5" stroke="#001f5a" stroke-width="2"/>
+            
+            <!-- Windows -->
+            <rect x="70" y="120" width="25" height="25" fill="#4A90E2"/>
+            <rect x="105" y="120" width="25" height="25" fill="#4A90E2"/>
+            <rect x="140" y="120" width="25" height="25" fill="#4A90E2"/>
+            <rect x="175" y="120" width="25" height="25" fill="#4A90E2"/>
+            
+            <rect x="70" y="160" width="25" height="25" fill="#4A90E2"/>
+            <rect x="105" y="160" width="25" height="25" fill="#4A90E2"/>
+            <rect x="140" y="160" width="25" height="25" fill="#4A90E2"/>
+            <rect x="175" y="160" width="25" height="25" fill="#4A90E2"/>
+            
+            <rect x="70" y="200" width="25" height="25" fill="#4A90E2"/>
+            <rect x="105" y="200" width="25" height="25" fill="#4A90E2"/>
+            <rect x="140" y="200" width="25" height="25" fill="#4A90E2"/>
+            <rect x="175" y="200" width="25" height="25" fill="#4A90E2"/>
+            
+            <!-- Door -->
+            <rect x="130" y="235" width="40" height="50" fill="#001f5a" stroke="#000" stroke-width="1"/>
+            <circle cx="165" cy="260" r="3" fill="#FFD700"/>
+            
+            <!-- Roof -->
+            <polygon points="50,100 150,40 250,100" fill="#001f5a"/>
+            
+            <!-- Flag -->
+            <rect x="145" y="35" width="3" height="25" fill="#000"/>
+            <polygon points="148,35 148,45 165,40" fill="#FFD700"/>
+            
+            <!-- Growth indicator -->
+            <path d="M 80 280 L 80 260 M 120 280 L 120 230 M 160 280 L 160 200" stroke="#FFD700" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <circle cx="80" cy="260" r="4" fill="#FFD700"/>
+            <circle cx="120" cy="230" r="4" fill="#FFD700"/>
+            <circle cx="160" cy="200" r="4" fill="#FFD700"/>
+          </svg>
+        </div>
+      </div>
       <div class="about-text">
         <p><strong>We bridge skilled professionals with top employers, creating meaningful career opportunities while helping organizations find the right talent to succeed.</strong></p>
         <p>We assist companies in the hiring process, recruitment, and onboarding of the right candidates.</p>
         <p>Founded in 2024, SYLVIRA OPC PVT LTD (Partner with Global Connect AI) is a growing product development firm headquartered in New Bangalore. We believe progress is everyone's business. That's why we commit our people, capital, and ideas to help our clients, shareholders, and the communities we serve to grow.</p>
-      </div>
-      <div class="about-stats">
-        <div class="stat">
-          <div class="stat-number">2024</div>
-          <div class="stat-label">Founded Year</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number">4</div>
-          <div class="stat-label">Core Services</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number">🌍</div>
-          <div class="stat-label">Global Reach</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Dedicated Team</div>
+        
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-number">2024</div>
+            <div class="stat-label">Founded Year</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Core Services</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">🌍</div>
+            <div class="stat-label">Global Reach</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Dedicated Team</div>
+          </div>
         </div>
       </div>
     </div>
@@ -414,22 +548,90 @@
     <h2>Our Services</h2>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon">👥</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- People recruitment -->
+            <circle cx="30" cy="25" r="8" fill="#003DA5"/>
+            <polygon points="30,35 20,50 40,50" fill="#003DA5"/>
+            
+            <circle cx="70" cy="25" r="8" fill="#003DA5"/>
+            <polygon points="70,35 60,50 80,50" fill="#003DA5"/>
+            
+            <circle cx="50" cy="40" r="9" fill="#4A90E2"/>
+            <polygon points="50,52 38,70 62,70" fill="#4A90E2"/>
+            
+            <!-- Handshake -->
+            <path d="M 35 75 Q 50 85 65 75" stroke="#FFD700" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
         <h3>Staffing & Recruitment</h3>
         <p>Transform your workforce with our expert staffing solutions, tailored to meet your unique business needs. Experience seamless hiring and exceptional talent acquisition with our dedicated team.</p>
       </div>
+
       <div class="service-card">
-        <div class="service-icon">📊</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Gantt chart -->
+            <rect x="10" y="20" width="80" height="5" fill="#003DA5"/>
+            <rect x="10" y="30" width="60" height="5" fill="#4A90E2"/>
+            <rect x="10" y="40" width="50" height="5" fill="#003DA5"/>
+            
+            <!-- Timeline -->
+            <line x1="10" y1="60" x2="80" y2="60" stroke="#003DA5" stroke-width="2"/>
+            <circle cx="15" cy="60" r="4" fill="#FFD700"/>
+            <circle cx="40" cy="60" r="4" fill="#FFD700"/>
+            <circle cx="65" cy="60" r="4" fill="#FFD700"/>
+            
+            <!-- Checkmarks -->
+            <path d="M 15 75 L 20 80 L 25 75" stroke="#4A90E2" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M 40 75 L 45 80 L 50 75" stroke="#4A90E2" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
         <h3>Project Management</h3>
         <p>Efficiently manage your projects from start to finish with our comprehensive project management solutions, ensuring timely delivery and optimal resource utilization.</p>
       </div>
+
       <div class="service-card">
-        <div class="service-icon">💻</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Server -->
+            <rect x="20" y="20" width="60" height="15" fill="#003DA5" stroke="#001f5a" stroke-width="1"/>
+            <circle cx="30" cy="27" r="2" fill="#FFD700"/>
+            <circle cx="40" cy="27" r="2" fill="#FFD700"/>
+            <circle cx="50" cy="27" r="2" fill="#FFD700"/>
+            
+            <rect x="20" y="42" width="60" height="15" fill="#003DA5" stroke="#001f5a" stroke-width="1"/>
+            <circle cx="30" cy="49" r="2" fill="#FFD700"/>
+            <circle cx="40" cy="49" r="2" fill="#FFD700"/>
+            <circle cx="50" cy="49" r="2" fill="#FFD700"/>
+            
+            <rect x="20" y="64" width="60" height="15" fill="#003DA5" stroke="#001f5a" stroke-width="1"/>
+            <circle cx="30" cy="71" r="2" fill="#FFD700"/>
+            <circle cx="40" cy="71" r="2" fill="#FFD700"/>
+            <circle cx="50" cy="71" r="2" fill="#FFD700"/>
+          </svg>
+        </div>
         <h3>IT Solutions</h3>
         <p>Our IT solutions streamline your business operations with cutting-edge technology, enhancing efficiency and security. Partner with us to transform your digital infrastructure.</p>
       </div>
+
       <div class="service-card">
-        <div class="service-icon">🔒</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Lock -->
+            <rect x="30" y="45" width="40" height="35" fill="#003DA5" stroke="#001f5a" stroke-width="2" rx="3"/>
+            <circle cx="50" cy="62" r="4" fill="#FFD700"/>
+            
+            <!-- Keyhole -->
+            <circle cx="50" cy="62" r="2.5" fill="#001f5a"/>
+            
+            <!-- Lock top -->
+            <path d="M 35 45 Q 35 30 50 30 Q 65 30 65 45" fill="none" stroke="#003DA5" stroke-width="3"/>
+            
+            <!-- Shield -->
+            <path d="M 50 25 L 60 30 L 60 45 Q 50 55 50 55 Q 40 45 40 45 L 40 30 Z" fill="#FFD700" opacity="0.8"/>
+          </svg>
+        </div>
         <h3>Security Solutions</h3>
         <p>Protect your digital assets with our comprehensive security solutions and implementation services, ensuring your business operates safely and securely.</p>
       </div>
@@ -442,27 +644,27 @@
       <h2>What We Offer</h2>
       <div class="offerings-grid">
         <div class="offering-item">
-          <h3>Staffing Solutions</h3>
+          <h3>👥 Staffing Solutions</h3>
           <p>Comprehensive recruitment and onboarding services tailored to your organizational needs.</p>
         </div>
         <div class="offering-item">
-          <h3>IT Infrastructure Design</h3>
+          <h3>🏗️ IT Infrastructure Design</h3>
           <p>Professional design and implementation of robust IT infrastructure for your business.</p>
         </div>
         <div class="offering-item">
-          <h3>IT Project Management</h3>
+          <h3>📊 IT Project Management</h3>
           <p>Expert project management and support for all your IT initiatives and deployments.</p>
         </div>
         <div class="offering-item">
-          <h3>Security Implementation</h3>
+          <h3>🔒 Security Implementation</h3>
           <p>End-to-end security solutions and implementation to protect your business assets.</p>
         </div>
         <div class="offering-item">
-          <h3>Quick Support</h3>
+          <h3>⚡ Quick Support</h3>
           <p>Fast and efficient support to kickstart your recruitment process and business needs.</p>
         </div>
         <div class="offering-item">
-          <h3>Dedicated Team</h3>
+          <h3>🎯 Dedicated Team</h3>
           <p>Access to skilled professionals dedicated to your project success and growth.</p>
         </div>
       </div>
